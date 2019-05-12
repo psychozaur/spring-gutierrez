@@ -7,16 +7,27 @@ import com.rybickim.spring.model.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class SearchEngineService implements SearchEngine {
 
+    private static final Logger logger = LoggerFactory.getLogger(SearchEngineService.class);
+
     private DocumentDAO documentDAO;
+
+    public SearchEngineService() {
+        if(logger.isDebugEnabled())
+            logger.debug("Created an instance from class SearchEngineService: " + this);
+    }
 
     public DocumentDAO getDocumentDAO() {
         return documentDAO;
     }
 
     public void setDocumentDAO(DocumentDAO documentDAO){
+        if(logger.isDebugEnabled())
+            logger.debug("Created an instance from interface DocumentDAO: " + this);
         this.documentDAO = documentDAO;
     }
 
