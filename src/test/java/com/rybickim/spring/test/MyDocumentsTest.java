@@ -4,6 +4,7 @@ import com.rybickim.spring.model.Document;
 import com.rybickim.spring.model.Type;
 import com.rybickim.spring.service.MySearchEngine;
 import com.rybickim.spring.service.SearchEngine;
+import org.apache.log4j.BasicConfigurator;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -30,7 +31,7 @@ public class MyDocumentsTest {
 
         List<Document> documents = engine.findByType(webType);
         assertNotNull(documents);
-        assertTrue(documents.size() == 1);
+        assertEquals(1, documents.size());
         assertEquals(webType.getName(),documents.get(0).getType().getName());
         assertEquals(webType.getDesc(),documents.get(0).getType().getDesc());
         assertEquals(webType.getExtension(),documents.get(0).getType().getExtension());
@@ -39,7 +40,7 @@ public class MyDocumentsTest {
 
         documents = engine.listAll();
         assertNotNull(documents);
-        assertTrue(documents.size() == 4);
+        assertEquals(4, documents.size());
     }
 
 }

@@ -3,11 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="engine" class="com.rybickim.spring.service.SearchEngineService">
+    <bean id="engine" class="com.rybickim.spring.service.SearchEngineService" scope="prototype">
         <property name="documentDAO" ref="documentDAO"/>
     </bean>
 
-    <bean id="documentDAO" class="com.rybickim.spring.data.DocumentRepository">
+    <bean id="documentDAO" class="com.rybickim.spring.data.DocumentRepository" scope="prototype">
         <property name="doc1" ref="doc1"/>
         <property name="doc2" ref="doc2"/>
         <property name="doc3" ref="doc3"/>

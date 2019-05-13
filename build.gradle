@@ -13,6 +13,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'org.springframework:spring-context:5.0.7.RELEASE'
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.26'
+    testCompile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.26'
 
 }
 

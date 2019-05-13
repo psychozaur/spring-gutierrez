@@ -22,25 +22,25 @@ public class MyDocumentsBeanConfigurationTest {
     @Before
     public void setup(){
         context = new AnnotationConfigApplicationContext(MyDocumentsContext.class);
-        engine = context.getBean(SearchEngine.class);
-        webType = context.getBean(Type.class);
     }
 
     @Test
-    public void testWithBeanConfigurationFindByType() {
+    public void testAll() {
+        engine = context.getBean(SearchEngine.class);
+        webType = context.getBean("webType",Type.class);
+
         List<Document> documents = engine.findByType(webType);
         assertNotNull(documents);
-        assertTrue(documents.size() == 1);
+        assertEquals(1, documents.size());
         assertEquals(webType.getName(),documents.get(0).getType().getName());
         assertEquals(webType.getDesc(),documents.get(0).getType().getDesc());
         assertEquals(webType.getExtension(),documents.get(0).getType().getExtension());
-    }
 
-    @Test
-    public void testWithBeanConfigurationListAll() {
-        List<Document> documents = engine.listAll();
+        engine = context.getBean(SearchEngine.class);
+
+        documents = engine.listAll();
         assertNotNull(documents);
-        assertTrue(documents.size() == 4);
+        assertEquals(4, documents.size());
     }
 
 }

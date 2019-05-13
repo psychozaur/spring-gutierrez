@@ -27,7 +27,7 @@ public class SearchEngineService implements SearchEngine {
 
     public void setDocumentDAO(DocumentDAO documentDAO){
         if(logger.isDebugEnabled())
-            logger.debug("Created an instance from interface DocumentDAO: " + this);
+            logger.debug("Created an instance from interface DocumentDAO: " + documentDAO);
         this.documentDAO = documentDAO;
     }
 

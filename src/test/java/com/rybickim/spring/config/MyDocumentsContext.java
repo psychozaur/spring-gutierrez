@@ -6,14 +6,19 @@ import com.rybickim.spring.model.Document;
 import com.rybickim.spring.model.Type;
 import com.rybickim.spring.service.SearchEngine;
 import com.rybickim.spring.service.SearchEngineService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
 public class MyDocumentsContext {
+
+    private static final Logger logger = LoggerFactory.getLogger(MyDocumentsContext.class);
 
     private Map<String, Document> documents = new HashMap<String,Document>();
     private Map<String, Type> types = new HashMap<String,Type>();
@@ -24,9 +29,13 @@ public class MyDocumentsContext {
     }
 
     @Bean
+    @Scope("prototype")
     public SearchEngine engine(){
         SearchEngineService engine = new SearchEngineService();
         engine.setDocumentDAO(documentDAO());
+
+        if(logger.isDebugEnabled()) logger.debug("SearchEngine created through bean: " + engine);
+
         return engine;
     }
 
