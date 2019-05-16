@@ -1,5 +1,6 @@
-package com.rybickim.spring.data;
+package com.rybickim.spring.data.impl;
 
+import com.rybickim.spring.data.TypeDataDAO;
 import com.rybickim.spring.model.Type;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TypeDataRepository implements TypeDataDAO{
+public class TypeDataRepository implements TypeDataDAO {
 
     private static final Logger logger = LoggerFactory.getLogger(TypeDataRepository.class);
 

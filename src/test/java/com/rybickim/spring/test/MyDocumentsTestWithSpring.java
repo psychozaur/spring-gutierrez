@@ -2,7 +2,6 @@ package com.rybickim.spring.test;
 
 import com.rybickim.spring.model.Document;
 import com.rybickim.spring.model.Type;
-import com.rybickim.spring.service.MySearchEngine;
 import com.rybickim.spring.service.SearchEngine;
 import org.junit.Before;
 import org.junit.Test;

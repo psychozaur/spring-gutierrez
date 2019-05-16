@@ -1,11 +1,11 @@
 package com.rybickim.spring.config;
 
 import com.rybickim.spring.data.DocumentDAO;
-import com.rybickim.spring.data.DocumentRepository;
+import com.rybickim.spring.data.impl.DocumentRepository;
 import com.rybickim.spring.model.Document;
 import com.rybickim.spring.model.Type;
 import com.rybickim.spring.service.SearchEngine;
-import com.rybickim.spring.service.SearchEngineService;
+import com.rybickim.spring.service.impl.SearchEngineService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;

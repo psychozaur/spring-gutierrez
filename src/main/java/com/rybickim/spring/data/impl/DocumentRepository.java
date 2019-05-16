@@ -1,5 +1,6 @@
-package com.rybickim.spring.data;
+package com.rybickim.spring.data.impl;
 
+import com.rybickim.spring.data.DocumentDAO;
 import com.rybickim.spring.model.Document;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

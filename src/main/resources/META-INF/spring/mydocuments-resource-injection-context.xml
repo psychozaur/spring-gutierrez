@@ -9,11 +9,11 @@
     </bean>
 
 
-    <bean id="engine" class="com.rybickim.spring.service.SearchEngineService">
+    <bean id="engine" class="com.rybickim.spring.service.impl.SearchEngineService">
         <property name="documentDAO" ref="documentDAO"/>
     </bean>
 
-    <bean id="documentDAO" class="com.rybickim.spring.data.DocumentRepository">
+    <bean id="documentDAO" class="com.rybickim.spring.data.impl.DocumentRepository">
         <property name="documents">
             <list>
                 <ref bean="doc1"/>
@@ -24,7 +24,7 @@
         </property>
     </bean>
 
-    <bean id="typeDAO" class="com.rybickim.spring.data.TypeDataRepository">
+    <bean id="typeDAO" class="com.rybickim.spring.data.impl.TypeDataRepository">
         <property name="types">
             <map>
                 <entry key="webType" value-ref="webType"/>

@@ -1,7 +1,8 @@
-package com.rybickim.spring.service;
+package com.rybickim.spring.service.impl;
 
 import com.rybickim.spring.model.Document;
 import com.rybickim.spring.model.Type;
+import com.rybickim.spring.service.SearchEngine;
 
 import java.util.ArrayList;
 import java.util.List;

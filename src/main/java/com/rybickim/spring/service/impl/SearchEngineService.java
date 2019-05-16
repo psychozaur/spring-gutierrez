@@ -1,4 +1,4 @@
-package com.rybickim.spring.service;
+package com.rybickim.spring.service.impl;
 
 import com.rybickim.spring.data.DocumentDAO;
 import com.rybickim.spring.model.Document;
@@ -7,6 +7,8 @@ import com.rybickim.spring.model.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import com.rybickim.spring.service.SearchEngine;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

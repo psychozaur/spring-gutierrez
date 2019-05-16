@@ -2,9 +2,7 @@ package com.rybickim.spring.test;
 
 import com.rybickim.spring.model.Document;
 import com.rybickim.spring.model.Type;
-import com.rybickim.spring.service.MySearchEngine;
 import com.rybickim.spring.service.SearchEngine;
-import org.apache.log4j.BasicConfigurator;
 import org.junit.Before;
 import org.junit.Test;
 import org.slf4j.Logger;
