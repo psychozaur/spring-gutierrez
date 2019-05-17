@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+        <context:component-scan base-package="com.rybickim.spring.service"/>
+        <bean id="engine" class="com.rybickim.spring.service.impl.SearchEngineService">
+            <property name="documentDAO" ref="documentDAO"/>
+        </bean>
+
+        <bean id="documentDAO" class="com.rybickim.spring.data.impl.DocumentRepository">
+            <property name="documents">
+                <list>
+                    <ref bean="doc1"/>
+                    <ref bean="doc2"/>
+                    <ref bean="doc3"/>
+                    <ref bean="doc4"/>
+                </list>
+            </property>
+        </bean>
+
+        <bean id="typeDAO" abstract="true" class="com.rybickim.spring.data.impl.TypeDataRepository">
+            <property name="types">
+                <map>
+                    <entry key="webType" value-ref="webType"/>
+                    <entry key="pdfType" value-ref="pdfType"/>
+                    <entry key="noteType" value-ref="noteType"/>
+                </map>
+            </property>
+        </bean>
+
+        <bean id="anotherTypeDAO" parent="typeDAO">
+            <property name="types">
+                <map merge="true">
+                    <entry key="pagesType" value-ref="pagesType"/>
+                    <entry key="numbersType" value-ref="numbersType"/>
+                    <entry key="keynoteType" value-ref="keynoteType"/>
+                </map>
+            </property>
+        </bean>
+
+        <bean id="doc1" class="com.rybickim.spring.model.Document">
+            <property name="name" value="Book Template"/>
+            <property name="type" ref="pdfType"/>
+            <property name="location" value="/Users/felipeg/Documents/Random/Book Template.pdf"/>
+        </bean>
+
+        <bean id="doc2" class="com.rybickim.spring.model.Document">
+            <property name="name" value="Sample Contract"/>
+            <property name="type">
+                <bean id="pdfType" class="com.rybickim.spring.model.Type">
+                    <property name="name" value="PDF" />
+                    <property name="desc" value="Portable Document Format" />
+                    <property name="extension" value=".pdf" />
+                </bean>
+            </property>
+            <property name="location" value="/Users/felipeg/Documents/Contracts/Sample Contract.pdf"/>
+        </bean>
+
+        <bean id="doc3" class="com.rybickim.spring.model.Document">
+            <property name="name" value="Clustering with RabbitMQ"/>
+            <property name="type" ref="noteType"/>
+            <property name="location" value="/Users/felipeg/Documents/Random/Clustering with RabbitMQ.txt"/>
+        </bean>
+
+        <bean id="doc4" class="com.rybickim.spring.model.Document">
+            <property name="name" value="Pro Spring Security Book"/>
+            <property name="type" ref="webType"/>
+            <property name="location" value="http://www.apress.com/9781430248187"/>
+        </bean>
+
+        <bean id="webType" class="com.rybickim.spring.model.Type">
+            <property name="name" value="WEB" />
+            <property name="desc" value="Web Link" />
+            <property name="extension" value=".url" />
+        </bean>
+
+        <bean id="pdfType" class="com.rybickim.spring.model.Type">
+            <property name="name" value="PDF" />
+            <property name="desc" value="Portable Document Format" />
+            <property name="extension" value=".pdf" />
+        </bean>
+
+        <bean id="noteType" class="com.rybickim.spring.model.Type">
+            <property name="name" value="NOTE" />
+            <property name="desc" value="Text Notes" />
+            <property name="extension" value=".txt" />
+        </bean>
+
+        <bean id="pagesType" class="com.rybickim.spring.model.Type">
+            <property name="name" value="PAGES" />
+            <property name="desc" value="Text Pages" />
+            <property name="extension" value=".txt" />
+        </bean>
+
+        <bean id="numbersType" class="com.rybickim.spring.model.Type">
+            <property name="name" value="NUMBERS" />
+            <property name="desc" value="Numbers Notes" />
+            <property name="extension" value=".csv" />
+        </bean>
+
+        <bean id="keynoteType" class="com.rybickim.spring.model.Type">
+            <property name="name" value="KEYNOTE" />
+            <property name="desc" value="Key Notes" />
+            <property name="extension" value=".txt" />
+        </bean>
+
+
+
+</beans>
