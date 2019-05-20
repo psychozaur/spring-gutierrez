@@ -22,6 +22,11 @@ public class MySearchEngine implements SearchEngine {
     }
 
     @Override
+    public List<Document> findByLocation(String location) {
+        return null;
+    }
+
+    @Override
     public List<Document> listAll() {
         return storage();
     }

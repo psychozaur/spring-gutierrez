@@ -14,13 +14,9 @@ import org.slf4j.LoggerFactory;
 
 public class SearchEngineService implements SearchEngine {
 
-    private static final Logger logger = LoggerFactory.getLogger(SearchEngineService.class);
-
     private DocumentDAO documentDAO;
 
     public SearchEngineService() {
-        if(logger.isDebugEnabled())
-            logger.debug("Created an instance from class SearchEngineService: " + this);
     }
 
     public DocumentDAO getDocumentDAO() {
@@ -28,8 +24,7 @@ public class SearchEngineService implements SearchEngine {
     }
 
     public void setDocumentDAO(DocumentDAO documentDAO){
-        if(logger.isDebugEnabled())
-            logger.debug("Created an instance from interface DocumentDAO: " + documentDAO);
+
         this.documentDAO = documentDAO;
     }
 
@@ -48,5 +43,10 @@ public class SearchEngineService implements SearchEngine {
     @Override
     public List<Document> listAll() {
         return Arrays.asList(documentDAO.getAll());
+    }
+
+    @Override
+    public List<Document> findByLocation(String location) {
+        throw new UnsupportedOperationException("Method findByLocation() not yet implemented");
     }
 }
