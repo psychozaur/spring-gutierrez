@@ -4,9 +4,11 @@ import java.util.Date;
 
 public class Document {
 
+    private String documentID;
     private String name;
     private Type type;
     private String location;
+    private String description;
     private Date created;
     private Date modified;
 
@@ -48,5 +50,36 @@ public class Document {
 
     public void setModified(Date modified) {
         this.modified = modified;
+    }
+
+    public String getDocumentID() {
+        return documentID;
+    }
+
+    public void setDocumentID(String documentID) {
+        this.documentID = documentID;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder("Document(");
+        builder.append("id: ");
+        builder.append(documentID);
+        builder.append(", name: ");
+        builder.append(name);
+        builder.append(", type: ");
+        builder.append(type);
+        builder.append(", location: ");
+        builder.append(location);
+        builder.append(")");
+        return builder.toString();
     }
 }

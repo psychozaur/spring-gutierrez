@@ -2,9 +2,26 @@ package com.rybickim.spring.model;
 
 public class Type {
 
+    private String typeId;
     private String name;
     private String desc;
     private String extension;
+
+    public Type() {
+    }
+
+    public Type(String name, String extension) {
+        this.name = name;
+        this.extension = extension;
+    }
+
+    public String getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(String typeId) {
+        this.typeId = typeId;
+    }
 
     public String getName() {
         return name;
@@ -28,5 +45,20 @@ public class Type {
 
     public void setExtension(String extension) {
         this.extension = extension;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder("Type(");
+        builder.append("id: ");
+        builder.append(typeId);
+        builder.append(", name: ");
+        builder.append(name);
+        builder.append(", description: ");
+        builder.append(desc);
+        builder.append(", extension: ");
+        builder.append(extension);
+        builder.append(")");
+        return builder.toString();
     }
 }

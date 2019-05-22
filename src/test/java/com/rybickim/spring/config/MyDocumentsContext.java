@@ -91,7 +91,7 @@ public class MyDocumentsContext {
 
     private DocumentDAO documentDAO(){
         DocumentRepository documentDAO = new DocumentRepository();
-        documentDAO.setDocuments(new ArrayList<>(documents.values()));
+//        documentDAO.setDocuments(new ArrayList<>(documents.values()));
         return documentDAO;
     }
 

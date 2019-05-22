@@ -10,17 +10,18 @@ repositories {
 }
 
 dependencies {
-
+    compile 'org.codehaus.groovy:groovy-all:2.3.0'
     compile 'org.aspectj:aspectjrt:1.7.4'
-    compile 'org.springframework:spring-context:5.0.7.RELEASE'
-    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.26'
-
-    testCompile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.26'
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.springframework:spring-test:5.0.7.RELEASE'
-
+    compile 'org.springframework:spring-context:4.0.5.RELEASE'
+    compile 'org.springframework:spring-jdbc:4.0.5.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-web:1.1.1.RELEASE'
+    
+    runtime 'cglib:cglib:3.1'
     runtime 'org.aspectj:aspectjweaver:1.7.4'
-
+    runtime 'hsqldb:hsqldb:1.8.0.10'
+    
+    testCompile 'junit:junit:4.11'
+    testCompile 'org.springframework:spring-test:4.0.5.RELEASE'
 }
 
 test {

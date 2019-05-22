@@ -12,11 +12,11 @@ import java.util.List;
 public class AnnotatedDocumentRepository implements DocumentDAO {
 
     @Override
-    public Document[] getAll() {
+    public List<Document> getAll() {
         return storage();
     }
 
-    private Document[] storage() {
+    private List<Document> storage() {
         List<Document> result = new ArrayList<Document>();
 
         Type type = new Type();
@@ -63,6 +63,6 @@ public class AnnotatedDocumentRepository implements DocumentDAO {
 
         result.add(document);
 
-        return result.toArray(new Document[result.size()]);
+        return result;
     }
 }
