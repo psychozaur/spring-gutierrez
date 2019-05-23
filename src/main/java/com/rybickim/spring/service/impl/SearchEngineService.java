@@ -42,7 +42,8 @@ public class SearchEngineService implements SearchEngine {
 
     @Override
     public List<Document> listAll() {
-        return documentDAO.getAll();
+        List<Document> result = documentDAO.getAll();
+        return result;
     }
 
     @Override

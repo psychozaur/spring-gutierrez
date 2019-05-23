@@ -18,10 +18,10 @@ import static org.junit.Assert.assertNotNull;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:META-INF/spring/mydocuments-jdbc-context.xml")
-public class MyDocumentsJDBCTest {
+@ContextConfiguration("classpath:META-INF/spring/mydocuments-jdbc-embedded-context.xml")
+public class MyDocumentsJDBCEmbeddedAnnotatedTest {
 
-    private static final Logger logger = LoggerFactory.getLogger(MyDocumentsJDBCTest.class);
+    private static final Logger logger = LoggerFactory.getLogger(MyDocumentsJDBCEmbeddedAnnotatedTest.class);
 
     @Autowired
     private SearchEngine engine;
@@ -29,8 +29,8 @@ public class MyDocumentsJDBCTest {
     private Type webType = new Type("WEB",".url");
 
     @Test
-    public void testUsingSpringJDBC() {
-        logger.debug("using JDBC mechanisms from Spring");
+    public void testUsingSpringJDBCEmbedded() {
+        logger.debug("using embedded JDBC mechanisms from Spring");
 
         List<Document> documents = engine.findByType(webType);
         assertNotNull(documents);
