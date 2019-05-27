@@ -31,6 +31,11 @@ public class MySearchEngine implements SearchEngine {
         return storage();
     }
 
+    @Override
+    public Document findById(String id) {
+        return null;
+    }
+
     private List<Document> storage(){
         List<Document> result = new ArrayList<>();
 

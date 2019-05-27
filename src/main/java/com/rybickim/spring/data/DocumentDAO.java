@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface DocumentDAO {
     public List<Document> getAll();
+
+    Document findById(String id);
 }

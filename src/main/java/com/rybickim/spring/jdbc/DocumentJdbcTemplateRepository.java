@@ -26,4 +26,9 @@ public class DocumentJdbcTemplateRepository implements DocumentDAO {
     public List<Document> getAll() {
         return jdbcTemplate.query(query, new DocumentRowMapper());
     }
+
+    @Override
+    public Document findById(String id) {
+        return null;
+    }
 }

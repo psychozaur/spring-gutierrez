@@ -67,4 +67,8 @@ public class AnnotatedDocumentRepository implements DocumentDAO {
         return result;
     }
 
+    @Override
+    public Document findById(String id) {
+        return null;
+    }
 }
