@@ -31,4 +31,9 @@ public class DocumentJdbcTemplateRepository implements DocumentDAO {
     public Document findById(String id) {
         return null;
     }
+
+    @Override
+    public void save(Document document) {
+
+    }
 }

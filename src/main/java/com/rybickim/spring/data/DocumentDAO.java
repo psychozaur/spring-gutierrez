@@ -8,4 +8,6 @@ public interface DocumentDAO {
     public List<Document> getAll();
 
     Document findById(String id);
+
+    public void save(Document document);
 }

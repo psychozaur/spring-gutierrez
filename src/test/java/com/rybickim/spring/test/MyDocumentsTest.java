@@ -66,6 +66,28 @@ public class MyDocumentsTest {
         assertNotNull(other);
     }
 
+//    @Autowired
+//    JMSProducer jmsProducer;
+//
+//    @Test
+//    public void testSpringJMS_1(){
+//        log.debug("Testing Spring JMS Producer...");
+//        jmsProducer.send();
+//    }
+
+    @Test
+    public void testSpringJMS_2() throws InterruptedException {
+        log.debug("Testing Spring JMS Listener/Insert...");
+        assertNotNull(engine);
+
+        //Waiting a least 5 seconds so the message is consumed.
+        Thread.sleep(5000);
+        //After the JMS message and insert, must be 5 Documents
+        assertEquals(MAX_ALL_DOCS, engine.listAll().size());
+
+        Type documentType = new Type("WEB",".url");
+        assertEquals(MAX_WEB_DOCS, engine.findByType(documentType).size());
+    }
 
     @Autowired
     RabbitMQProducer rabbitmqProducer;

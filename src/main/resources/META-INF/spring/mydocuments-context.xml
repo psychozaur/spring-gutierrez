@@ -26,11 +26,11 @@
     </bean>
 
     <!-- JMS Listener -->
-<!--    <jms:listener-container connection-factory="activemqConnectionFactory"-->
-<!--                            acknowledge="auto" container-type="default">-->
-<!--        <jms:listener destination="mydocumentsQueue" ref="JMSConsumer"-->
-<!--                      method="onMessage"/>-->
-<!--    </jms:listener-container>-->
+    <jms:listener-container connection-factory="activemqConnectionFactory"
+                            acknowledge="auto" container-type="default">
+        <jms:listener destination="mydocumentsQueue" ref="JMSConsumer"
+                      method="onMessage"/>
+    </jms:listener-container>
 
     <!-- RabbitMQ -->
     <rabbit:connection-factory id="rabbitConnectionFactory" host="localhost"/>

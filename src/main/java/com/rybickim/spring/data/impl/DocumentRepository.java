@@ -53,7 +53,9 @@ public class DocumentRepository implements DocumentDAO {
             updateDocument = template.queryForObject(find,
                     new Object[] { id },
                     new DocumentRowMapper());
-        } catch (EmptyResultDataAccessException ex) {}
+        } catch (EmptyResultDataAccessException e) {
+            e.printStackTrace();
+        }
         return updateDocument;
     }
 
@@ -76,8 +78,8 @@ public class DocumentRepository implements DocumentDAO {
                                 document.getDescription(),
                                 document.getType().getTypeId(), new Date(),
                                 document.getDocumentID() });
-        } catch (Exception ex) {
-            ex.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
